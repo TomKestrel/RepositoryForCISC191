@@ -18,18 +18,14 @@ import javax.swing.border.Border;
  * For a total list of references, refer to the top notes in the "FinalProjectMainPage.java" file
  * 
  * Responsibilities of class:
- * Contains all the framework for the JFrame "Question1Page" that the users will interact
+ * Contains all the framework for the JFrame "Question4Page" that the users will interact
  */
 
-public class Question1Page extends JFrame // Question1Page IS-A JFrame.
+public class Question4Page extends JFrame // Question4Page IS-A JFrame
 {	
-	// A demonstration of aggregation (LO3)
-	private CostSlider costSlider; // A Question1Page HAS-A costSlider
-	
-	public Question1Page()
+	public Question4Page(CostSlider costSlider)
 	{
-		costSlider = new CostSlider(); // initialize costSlider
-		
+		//this.costSlider = costSlider;
 		// "this" keyword can be used since the class BeginningPage IS-A JFrame. Therefore the keyword "this" can be called
 		// to refer to the class itself and add things onto the JFrame
 		this.setTitle("Lifestyle calculator");
@@ -49,7 +45,7 @@ public class Question1Page extends JFrame // Question1Page IS-A JFrame.
 		// Everything dealing with the South panel
 		// To-do: add total cost slider widgets in the south panel
 		JPanel southPanel = new JPanel();
-		southPanel.setPreferredSize(new Dimension(100,200));
+		southPanel.setPreferredSize(new Dimension(0,200));
 		southPanel.setBackground(new Color(12,80,80));
 		southPanel.setBorder(border);
 		costSlider.addCostSlider(southPanel); // adding costSlider to the southPanel
@@ -77,19 +73,17 @@ public class Question1Page extends JFrame // Question1Page IS-A JFrame.
 		centerPanel.add(centerPanelSouth, BorderLayout.SOUTH);
 
 		// Applying the method "addButtonsMethodForQuestion1" and "addDescriptionsMethodforQuestion1" to each of their relevant panels
-		ButtonsAndDescriptionsForQuestion1.addButtonsMethodForQuestion1(centerPanelNorth, this, costSlider);
-		ButtonsAndDescriptionsForQuestion1.addDescriptionsMethodforQuestion1(centerPanelSouth);
+		ButtonsAndDescriptionsForQuestion4.addButtonsMethodForQuestion4(centerPanelNorth, this, costSlider);
+		ButtonsAndDescriptionsForQuestion4.addDescriptionsMethodforQuestion4(centerPanelSouth);
 		
 		JLabel question1 = new JLabel();
-		question1.setText("<html><br><br><br>I know you love food.<br><br>How much do you spend per week on eating out?");
+		question1.setText("<html><br><br>This is... also USA...<br><br>How much does your health insurance cost per month?");
 		question1.setForeground(Color.white); // set text color
 		question1.setFont(new Font("", Font.PLAIN, 20)); // set text size and font style
 		question1.setVerticalAlignment(JLabel.CENTER);
 		northPanel.add(question1, BorderLayout.CENTER);
-		
+
 		this.setVisible(true); // make everything visible including the JFrame itself
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // ends the JVM when the JFrame "BeginningPage" is closed
 	}
 }
-
-
