@@ -19,7 +19,7 @@ import javax.swing.JSlider;
 public class CostSlider
 {
 	// parameters are as follow: (lowestSliderValue, maximumSliderValue, initialSliderPosition)
-	private JSlider costSlider = new JSlider(0, 5000, 0); // CostSlider HAS-A costSlider
+	private JSlider costSlider = new JSlider(0, 6000, 0); // CostSlider HAS-A costSlider
 	private JLabel totalCost = new JLabel(); // CostSlider HAS-A totalCost
 	
 	public void addCostSlider (JPanel panel)
@@ -88,57 +88,59 @@ public class CostSlider
 		costSlider.setValue(currentValue + 600); // $600 x 1 week = $600 per month
 	}
 	
-	//===================================================================================================================================
-	// Methods for ButtonsAndDescriptionsForQuestion3
-	public void question3IncreaseSliderValueTier1()
-	{
-		int currentValue = costSlider.getValue();
-		costSlider.setValue(currentValue + 0); // $0 per month in gas
-	}
+	//NOTE: Eventually I realized I can use polymorphism on buttons to avoid this shenanigan of creating all these separate individual methods!
 	
-	public void question3IncreaseSliderValueTier2()
-	{
-		int currentValue = costSlider.getValue();
-		costSlider.setValue(currentValue + 100); // $100 per month in gas
-	}
-	
-	public void question3IncreaseSliderValueTier3()
-	{
-		int currentValue = costSlider.getValue();
-		costSlider.setValue(currentValue + 200); // $200 per month
-	}
-	
-	public void question3IncreaseSliderValueTier4()
-	{
-		int currentValue = costSlider.getValue();
-		costSlider.setValue(currentValue + 300); // $300 per month
-	}
-	
-	//===================================================================================================================================
-	// Methods for ButtonsAndDescriptionsForQuestion4
-	public void question4IncreaseSliderValueTier1()
-	{
-		int currentValue = costSlider.getValue();
-		costSlider.setValue(currentValue + 0); // $0 per month in health insurance
-	}
-	
-	public void question4IncreaseSliderValueTier2()
-	{
-		int currentValue = costSlider.getValue();
-		costSlider.setValue(currentValue + 400); // $400 per month in health insurance
-	}
-	
-	public void question4IncreaseSliderValueTier3()
-	{
-		int currentValue = costSlider.getValue();
-		costSlider.setValue(currentValue + 800); // per month in health insurance
-	}
-	
-	public void question4IncreaseSliderValueTier4()
-	{
-		int currentValue = costSlider.getValue();
-		costSlider.setValue(currentValue + 1200); // per month in health insurance
-	}
+//	//===================================================================================================================================
+//	// Methods for ButtonsAndDescriptionsForQuestion3
+//	public void question3IncreaseSliderValueTier1()
+//	{
+//		int currentValue = costSlider.getValue();
+//		costSlider.setValue(currentValue + 0); // $0 per month in gas
+//	}
+//	
+//	public void question3IncreaseSliderValueTier2()
+//	{
+//		int currentValue = costSlider.getValue();
+//		costSlider.setValue(currentValue + 100); // $100 per month in gas
+//	}
+//	
+//	public void question3IncreaseSliderValueTier3()
+//	{
+//		int currentValue = costSlider.getValue();
+//		costSlider.setValue(currentValue + 200); // $200 per month
+//	}
+//	
+//	public void question3IncreaseSliderValueTier4()
+//	{
+//		int currentValue = costSlider.getValue();
+//		costSlider.setValue(currentValue + 300); // $300 per month
+//	}
+//	
+//	//===================================================================================================================================
+//	// Methods for ButtonsAndDescriptionsForQuestion4
+//	public void question4IncreaseSliderValueTier1()
+//	{
+//		int currentValue = costSlider.getValue();
+//		costSlider.setValue(currentValue + 0); // $0 per month in health insurance
+//	}
+//	
+//	public void question4IncreaseSliderValueTier2()
+//	{
+//		int currentValue = costSlider.getValue();
+//		costSlider.setValue(currentValue + 400); // $400 per month in health insurance
+//	}
+//	
+//	public void question4IncreaseSliderValueTier3()
+//	{
+//		int currentValue = costSlider.getValue();
+//		costSlider.setValue(currentValue + 800); // per month in health insurance
+//	}
+//	
+//	public void question4IncreaseSliderValueTier4()
+//	{
+//		int currentValue = costSlider.getValue();
+//		costSlider.setValue(currentValue + 1200); // per month in health insurance
+//	}
 
 	//===================================================================================================================================
 	public int getValue()
@@ -146,4 +148,8 @@ public class CostSlider
 		return costSlider.getValue(); //gets the value from costSlider (used in the ResultPage class)
 	}
 	
+	public void setValue(int value)
+	{
+		costSlider.setValue(value);
+	}
 }

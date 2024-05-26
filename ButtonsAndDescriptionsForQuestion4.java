@@ -1,4 +1,3 @@
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -25,6 +24,8 @@ import javax.swing.SwingConstants;
 
 public class ButtonsAndDescriptionsForQuestion4
 {
+	private static ButtonsInterface ButtonInstance = new ButtonSelection();
+	
 	// Transporting the ArrayList tierCounter from the last ButtonsAndDescriptionsForQuestion class to this class
 	private static ArrayList<String> tierCounter = ButtonsAndDescriptionsForQuestion3.getTierCounterFromQuestion3();
 	
@@ -47,10 +48,14 @@ public class ButtonsAndDescriptionsForQuestion4
 			public void actionPerformed(ActionEvent e)
 			{
 				System.out.println("Tier 1 selected");
-				tierCounter.add("Health Insurance: $0");
-				question4PageInstance.dispose();
-				costSliderInstance.question4IncreaseSliderValueTier1(); // call the method to increase slider value
-				new ResultPage(costSliderInstance);	// Can add more question pages is so desired rather than calling on a new ResultPage
+				tierCounter.add("Health Insurance: $0"); // adds this String onto the ArrayList called tierCounter
+				question4PageInstance.dispose(); // disposes this current JFrame
+				
+				// Practicing an instance of Polymorphism (LO4)
+				ButtonInstance.increaseSliderValue(costSliderInstance, 0); // Health insurance cost: add $0 per month onto costSlider
+				
+				new Question5Page(costSliderInstance);
+				
 			}
 		});
 		chooseWhichPanel.add(tier1Button);
@@ -64,10 +69,13 @@ public class ButtonsAndDescriptionsForQuestion4
 			public void actionPerformed(ActionEvent e)
 			{
 				System.out.println("Tier 2 selected");
-				tierCounter.add("Health Insurance: $400");
-				question4PageInstance.dispose();
-				costSliderInstance.question4IncreaseSliderValueTier2(); // call the method to increase slider value
-				new ResultPage(costSliderInstance);
+				tierCounter.add("Health Insurance: $400"); // adds this String onto the ArrayList called tierCounter
+				question4PageInstance.dispose(); // disposes this current JFrame
+				
+				// Practicing an instance of Polymorphism (LO4)
+				ButtonInstance.increaseSliderValue(costSliderInstance, 400); // Health insurance cost: add $400 per month onto costSlider
+				
+				new Question5Page(costSliderInstance);
 			}
 		});
 		chooseWhichPanel.add(tier2Button);
@@ -81,10 +89,13 @@ public class ButtonsAndDescriptionsForQuestion4
 			public void actionPerformed(ActionEvent e)
 			{
 				System.out.println("Tier 3 selected");
-				tierCounter.add("Health Insurance: $800");
-				question4PageInstance.dispose();
-				costSliderInstance.question4IncreaseSliderValueTier3(); // call the method to increase slider value
-				new ResultPage(costSliderInstance);
+				tierCounter.add("Health Insurance: $800"); // adds this String onto the ArrayList called tierCounter
+				question4PageInstance.dispose(); // disposes this current JFrame
+				
+				// Practicing an instance of Polymorphism (LO4)
+				ButtonInstance.increaseSliderValue(costSliderInstance, 800); // Health insurance cost: add $800 per month onto costSlider
+				
+				new Question5Page(costSliderInstance);
 			}
 		});
 		chooseWhichPanel.add(tier3Button);
@@ -98,10 +109,13 @@ public class ButtonsAndDescriptionsForQuestion4
 			public void actionPerformed(ActionEvent e)
 			{
 				System.out.println("Tier 4 selected");
-				tierCounter.add("Health Insurance: $1200");
-				question4PageInstance.dispose();
-				costSliderInstance.question4IncreaseSliderValueTier4(); // call the method to increase slider value
-				new ResultPage(costSliderInstance);
+				tierCounter.add("Health Insurance: $1200"); // adds this String onto the ArrayList called tierCounter
+				question4PageInstance.dispose(); // disposes this current JFrame
+				 
+				// Practicing an instance of Polymorphism (LO4)
+				ButtonInstance.increaseSliderValue(costSliderInstance, 1200); // Health insurance cost: add $1200 per month onto costSlider
+				
+				new Question5Page(costSliderInstance);
 			}
 		});
 		chooseWhichPanel.add(tier4Button);

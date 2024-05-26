@@ -1,4 +1,3 @@
-
 /**
  * Lead Author: 
  * Wootark Kim (github username will say Tom Kestrel)
@@ -64,12 +63,14 @@
  *  - Implemented a PrintWriter class to take in user's input that will then save to a file
  *  - Implemented a custom Exception class to prevent users from proceeding forward if they put in a non-numerical expenditure input
  *  - Implemented a "ResultPage" that will display the total racked up expenditures. Will also display the user's original guess
+ * 4.0 (4th submission: 25 May 2024)
+ *  - Implemented polymorphism through the "ButtonsInterface" class. The method found within it is then defined in the "ButtonDelection" class. Instances of ButtonInterface is then made and utilized to customize how much value to be added in costSlider during a button press.
  * 
  * Current LOs checklist:
  * (LO1 - Object Oriented Design)-----------Demonstrated through general practice of Object Oriented Design all throughout the project (e.g. aggregation, inheritance, methods, etc.)
  * (LO2 - Arrays)---------------------------Do not need to implement arrays into final project (already have senior through video submission)
  * (LO3 - Beginning Classes)----------------Demonstrated through (other than basic class creations) object aggregation of the CostSlider class (e.g. "CostSlider costSlider;")
- * (LO4 - Inheritance and PolyMorphism)-----Demonstrates inheriteance through "extends" keywords (e.g. "NonNumberInputException extends Exception" and "Question1Page extends JFrame")
+ * (LO4 - Inheritance and PolyMorphism)-----Demonstrated Polymorphism through the interface class "ButtonsInterface," the ButtonSelection class, and applied onto "ButtonsAndDescriptionsForQuestions3,4, and 5" (note that I left 1 and 2 alone to show the difference between the old vs new) Demonstrates inheriteance through "extends" keywords (e.g. "NonNumberInputException extends Exception" and "Question1Page extends JFrame")
  * (LO5 - Generic Data Structure)-----------Demonstrated through the ArrayList called tierCounter that keeps and tracks of all the selection the user chose
  * (LO6 - GUI)------------------------------Demonstrated through the project's utilization of numerous GUI widgets (e.g. JFrames, JLabels, Layoutmanagers, etc.)
  * (LO7 - Exception Handling)---------------Demonstrated through the custom exception usage "NonNumberInputException" and general practices of exception try-catch blocks when utilizing PrintWriter in the Question0Page class
